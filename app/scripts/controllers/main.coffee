@@ -9,8 +9,8 @@
 ###
 angular.module('peoplemapApp')
   .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'adamo'
-      'AngularJS'
-      'Karma'
+    $scope.people = [
+      'adam'
+      'brian'
+      'john'
     ]
