@@ -7,7 +7,8 @@ app = angular.module('peoplemapApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch',
-  'ui.sortable'
+  'ui.sortable',
+  'google-maps'
 ])
 app.config ($routeProvider) ->
   $routeProvider
