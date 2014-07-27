@@ -10,10 +10,12 @@
       </div>
     </div>
   </form>
-  <p class='input-group' ng-repeat='user in people'>
-    <input type='text' class='form-control' ng-model='user' >
-    <span class='input-group-btn'>
-      <button class='btn btn-danger' ng-click='removeUser($index)' aria-label='Remove'>&times</button>
-    </span>
-  </p>
+  <div ui-sortable ng-model='people'>
+    <p class='input-group' ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
+      <input type='text' class='form-control' ng-model='user' >
+      <span class='input-group-btn'>
+        <button class='btn btn-danger' ng-click='removeUser($index)' aria-label='Remove'>&times</button>
+      </span>
+    </p>
+  </div>
 </div>
