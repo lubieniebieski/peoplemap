@@ -2,20 +2,33 @@
   <h2>People</h2>
   <form role='form' ng-submit='addUser()'>
     <div class='row'>
-      <div class='input-group'>
-        <input type='text' ng-model='user' placeholder="What's the user name?" class='form-control'>
-        <span class='input-group-btn'>
-          <input type='submit' class='btn btn-primary' value='Add'>
-        </span>
+      <div class='form-group'>
+        <label for='user-name'>Name:</label>
+        <input type='text' id='user-name' ng-model='user.name' placeholder='e.g. John Smith' class='form-control'>
       </div>
+      <div class='form-group'>
+        <label for='user-location'>Location:</label>
+        <input type='text' id='user-location' class='form-control' placeholder='e.g. Poznan' ng-model='user.location' >
+      </div>
+      <button type='submit' class='btn btn-primary'>Add</submit>
     </div>
   </form>
-  <div ui-sortable ng-model='people'>
-    <p class='input-group' ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
-      <input type='text' class='form-control' ng-model='user' >
-      <span class='input-group-btn'>
-        <button class='btn btn-danger' ng-click='removeUser($index)' aria-label='Remove'>&times</button>
-      </span>
-    </p>
-  </div>
+  <table class='table table-striped' ng-show='people.length'>
+    <thead>
+      <tr>
+        <th>User name</th>
+        <th>Location</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody ui-sortable ng-model='people'>
+      <tr ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
+        <td>{{ user.name }}</td>
+        <td>{{ user.location }}</td>
+        <td>
+          <span class='btn btn-danger btn-xs' ng-click='removeUser($index)'>&times</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

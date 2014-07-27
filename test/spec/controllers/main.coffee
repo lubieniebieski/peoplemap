@@ -15,17 +15,23 @@ describe 'Controller: MainCtrl', ->
       $scope: scope
     }
 
-  it 'has no people on start', ->
+  xit 'has no people on start', ->
     expect(scope.people.length).toBe 0
 
   it 'add user to the list', ->
-    scope.user = 'adam'
+    scope.people = []
+    scope.user =
+      name: 'adam'
+      location: 'location'
     scope.addUser()
     expect(scope.people.length).toBe 1
-    expect(scope.people[0]).toEqual 'adam'
+    expect(scope.people[0].name).toEqual 'adam'
 
   it 'adds and removes user from the list', ->
-    scope.todo = 'adam'
+    scope.people = []
+    scope.user =
+      name: 'adam'
+      location: 'location'
     scope.addUser()
     scope.removeUser 0
     expect(scope.people.length).toBe 0
