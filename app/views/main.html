@@ -1,6 +1,19 @@
-<div class="container">
+<div class='container'>
   <h2>People</h2>
-  <p class='form-group' ng-repeat='user in people'>
+  <form role='form' ng-submit='addUser()'>
+    <div class='row'>
+      <div class='input-group'>
+        <input type='text' ng-model='user' placeholder="What's the user name?" class='form-control'>
+        <span class='input-group-btn'>
+          <input type='submit' class='btn btn-primary' value='Add'>
+        </span>
+      </div>
+    </div>
+  </form>
+  <p class='input-group' ng-repeat='user in people'>
     <input type='text' class='form-control' ng-model='user' >
+    <span class='input-group-btn'>
+      <button class='btn btn-danger' ng-click='removeUser($index)' aria-label='Remove'>&times</button>
+    </span>
   </p>
 </div>
