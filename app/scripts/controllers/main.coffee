@@ -2,12 +2,7 @@
 
 angular.module('peoplemapApp')
   .controller 'MainCtrl', ($scope) ->
-    $scope.people = [
-      'adam'
-      'brian'
-      'john'
-      'arthur'
-    ]
+    $scope.people = []
     $scope.addUser = ->
       $scope.people.push $scope.user
       $scope.user = ''

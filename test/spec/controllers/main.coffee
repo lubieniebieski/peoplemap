@@ -15,5 +15,17 @@ describe 'Controller: MainCtrl', ->
       $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', ->
-    expect(scope.awesomeThings.length).toBe 3
+  it 'has no people on start', ->
+    expect(scope.people.length).toBe 0
+
+  it 'add user to the list', ->
+    scope.user = 'adam'
+    scope.addUser()
+    expect(scope.people.length).toBe 1
+    expect(scope.people[0]).toEqual 'adam'
+
+  it 'adds and removes user from the list', ->
+    scope.todo = 'adam'
+    scope.addUser()
+    scope.removeUser 0
+    expect(scope.people.length).toBe 0
