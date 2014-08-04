@@ -18,10 +18,3 @@ app.controller 'MainCtrl', ($scope) ->
   $scope.removeUser = (index) ->
     $scope.people.splice(index, 1)
 
-  startingPoint =
-    latitude: 51.9189046
-    longitude: 19.1343786
-
-  $scope.map =
-    center: startingPoint
-    zoom: 5
