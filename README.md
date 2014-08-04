@@ -1,19 +1,19 @@
-#PeopleApp
+# PeopleApp
 
 **PeopleApp** (temporary name) by [lubieniebieski@gmail.com](mailto:lubieniebieski@gmail.com) and TeamAlpha.
 
-##Getting started
+## Getting started
 
-####1. Prerequisites
+#### 1. Prerequisites
 
 - Node.js
 - NPM (Node Package Manager)
 - Ruby ;)
 - Compass gem
 
-####2. Clone GitHub repository
+#### 2. Clone GitHub repository
 
-####3. Setup project
+#### 3. Setup project
 
 Run in the project directory:
 
@@ -37,8 +37,19 @@ If all went well you should see something like:
 grunt-cli v0.1.13
 ```
 
-####4. Run app
+#### 4. Run app
 
 ```
 grunt serve
 ```
+
+#### Todo:
+
+* play more with Google Maps API
+* maps are extracted to a separate template
+* add coordinates to users and show them on map
+* validating coordinates
+* each new user triggers showing a new marker
+* users are fetched from Users API
+* live map reload based on Users API
+
