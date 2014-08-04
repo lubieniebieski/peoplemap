@@ -1,6 +1,9 @@
 <div class='container'>
   <div ng-controller='MapCtrl' ng-init='getLocation()'>
     <google-map control='googleMap' center='centerOn' zoom='zoom'>
+      <marker coords='currentPosition.coords' >
+       <marker-label anchor='22 0' class='map-marker-label' content='currentPosition.options.labelContent'></marker-label>
+      </marker>
     </google-map>
   </div>
   <h2>People</h2>

@@ -5,6 +5,11 @@ app.controller 'MapCtrl',
     $scope.centerOn =
       latitude: 59.9189046
       longitude: 19.1343786
+    $scope.currentPosition =
+      coords: {}
+      options:
+        labelContent: "You're here"
+
     $scope.googleMap = {}
     $scope.zoom = 3
 
@@ -13,6 +18,7 @@ app.controller 'MapCtrl',
 
     onPositionAcquired = (position) ->
       $scope.$apply ->
+        $scope.currentPosition.coords = position.coords
         $scope.googleMap.getGMap().panTo(convertCoords(position.coords))
         $scope.googleMap.getGMap().setZoom(10)
 
