@@ -3,6 +3,7 @@
     <tr>
       <th>User name</th>
       <th>Location</th>
+      <th>Coordinates</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -10,6 +11,7 @@
     <tr ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
       <td>{{ user.name }}</td>
       <td>{{ user.location }}</td>
+      <td>{{ user.coordinates.B }} ; {{ user.coordinates.k }}</td>
       <td>
         <span class='btn btn-danger btn-xs' ng-click='removeUser($index)'>&times</button>
       </td>
