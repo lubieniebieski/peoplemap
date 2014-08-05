@@ -15,7 +15,9 @@ app.controller 'MainCtrl', ($scope) ->
   $scope.setCoordinates = (location, object) ->
     $scope.geocoder.geocode { address: location }, (results, status) ->
       if status is google.maps.GeocoderStatus.OK
-        object.coordinates = results[0].geometry.location
+        $scope.$apply ->
+          object.coordinates = results[0].geometry.location
+          return
       else
         console.error "Geocode was not successful for the following reason: " + status
 
