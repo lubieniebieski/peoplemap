@@ -1,0 +1,18 @@
+<table class='table table-striped' ng-show='people.length'>
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Location</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody ui-sortable ng-model='people'>
+    <tr ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
+      <td>{{ user.name }}</td>
+      <td>{{ user.location }}</td>
+      <td>
+        <span class='btn btn-danger btn-xs' ng-click='removeUser($index)'>&times</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

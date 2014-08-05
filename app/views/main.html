@@ -7,35 +7,6 @@
     </google-map>
   </div>
   <h2>People</h2>
-  <form role='form' ng-submit='addUser()'>
-    <div class='row'>
-      <div class='form-group'>
-        <label for='user-name'>Name:</label>
-        <input type='text' id='user-name' ng-model='user.name' placeholder='e.g. John Smith' class='form-control'>
-      </div>
-      <div class='form-group'>
-        <label for='user-location'>Location:</label>
-        <input type='text' id='user-location' class='form-control' placeholder='e.g. Poznan' ng-model='user.location' >
-      </div>
-      <button type='submit' class='btn btn-primary'>Add</submit>
-    </div>
-  </form>
-  <table class='table table-striped' ng-show='people.length'>
-    <thead>
-      <tr>
-        <th>User name</th>
-        <th>Location</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody ui-sortable ng-model='people'>
-      <tr ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
-        <td>{{ user.name }}</td>
-        <td>{{ user.location }}</td>
-        <td>
-          <span class='btn btn-danger btn-xs' ng-click='removeUser($index)'>&times</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <user-form></user-form>
+  <users-table></users-table>
 </div>

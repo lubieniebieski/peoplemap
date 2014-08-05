@@ -18,3 +18,10 @@ app.controller 'MainCtrl', ($scope) ->
   $scope.removeUser = (index) ->
     $scope.people.splice(index, 1)
 
+app.directive 'userForm', ->
+  restrict: 'E'
+  templateUrl: 'views/_user_form.html'
+
+app.directive 'usersTable', ->
+  restrict: 'E'
+  templateUrl: 'views/_users_table.html'
