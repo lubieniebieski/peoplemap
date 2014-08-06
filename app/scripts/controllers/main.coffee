@@ -2,7 +2,7 @@
 
 app = angular.module('peoplemapApp')
 
-app.controller 'MainCtrl', ($scope) ->
+app.controller 'MainCtrl', ($scope, $rootScope) ->
   $scope.people = [
     name: 'jan'
     location: 'poznan'
@@ -10,6 +10,9 @@ app.controller 'MainCtrl', ($scope) ->
     name: 'john'
     location: 'warsaw'
   ]
+
+  $scope.$on 'user:added', (name, user) ->
+    $scope.people.push user
 
   $scope.geocoder = new google.maps.Geocoder()
   $scope.setCoordinates = (location, object) ->
@@ -27,17 +30,22 @@ app.controller 'MainCtrl', ($scope) ->
 
   $scope.$watchCollection('people', $scope.onPeopleChanged)
 
-  $scope.addUser = ->
-    $scope.people.push $scope.user
-    $scope.user = {}
-
   $scope.removeUser = (index) ->
     $scope.people.splice(index, 1)
 
 app.directive 'userForm', ->
   restrict: 'E'
   templateUrl: 'views/_user_form.html'
+  controller: ($scope, $rootScope) ->
+    $scope.addUser = ->
+      $scope.$emit 'user:added', $scope.user
+      $scope.user = {}
+      $scope.userForm.$setPristine()
+
+  scope: '=user'
 
 app.directive 'usersTable', ->
   restrict: 'E'
   templateUrl: 'views/_users_table.html'
+
+app.servi
