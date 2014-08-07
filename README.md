@@ -19,7 +19,7 @@ Run in the project directory:
 
 ```
 npm install
-bower install
+npm -g install bower && bower install # -g installs bower globally
 ```
 
 This should install Yeoman, Bower & Grunt.js.
