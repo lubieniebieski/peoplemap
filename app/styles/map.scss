@@ -5,5 +5,8 @@
   text-align: center;
   border: 1px solid black;
   white-space: nowrap;
-  padding: 2px;
+  padding: 4px;
+  &.marker-place {
+    color: green
+  }
 }

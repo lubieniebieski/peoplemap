@@ -7,6 +7,9 @@
       <marker ng-repeat='user in people' coords="user.coordinates">
         <marker-label anchor='22 0' class='map-marker-label' content='user.name'></marker-label>
       </marker>
+      <marker ng-repeat='place in places' coords="place.coordinates">
+        <marker-label anchor='22 0' class='map-marker-label marker-place' content='place.name'></marker-label>
+      </marker>
     </google-map>
   </div>
   <h2>People</h2>
