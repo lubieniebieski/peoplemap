@@ -11,7 +11,11 @@
     <tr ng-repeat='user in people' style="padding:5px 10px; cursor: move;">
       <td>{{ user.name }}</td>
       <td>{{ user.location }}</td>
-      <td>{{ user.coordinates.B }} ; {{ user.coordinates.k }}</td>
+      <td>
+        <img ng-hide='user.coordinates.latitude' src="images/loader.gif" alt=""/>
+        {{ user.coordinates.latitude }}
+        {{ user.coordinates.longitude }}
+      </td>
       <td>
         <span class='btn btn-danger btn-xs' ng-click='removeUser($index)'>&times</button>
       </td>

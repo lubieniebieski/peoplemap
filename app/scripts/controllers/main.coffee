@@ -6,9 +6,15 @@ app.controller 'MainCtrl', ($scope, $rootScope) ->
   $scope.people = [
     name: 'jan'
     location: 'poznan'
+    coordinates: {}
   ,
     name: 'john'
     location: 'warsaw'
+    coordinates: {}
+  ,
+    name: 'janusz'
+    location: 'gdansk'
+    coordinates: {}
   ]
 
   $scope.$on 'user:added', (name, user) ->
@@ -19,14 +25,16 @@ app.controller 'MainCtrl', ($scope, $rootScope) ->
     $scope.geocoder.geocode { address: location }, (results, status) ->
       if status is google.maps.GeocoderStatus.OK
         $scope.$apply ->
-          object.coordinates = results[0].geometry.location
+          object.coordinates =
+            latitude: results[0].geometry.location.lat()
+            longitude: results[0].geometry.location.lng()
           return
       else
         console.error "Geocode was not successful for the following reason: " + status
 
   $scope.onPeopleChanged = (newValue, oldValue, scope) ->
     angular.forEach scope.people, (value, key) ->
-      $scope.setCoordinates(value.location, value) unless value.coordinates?
+      $scope.setCoordinates(value.location, value) unless value.coordinates?.latitude?
 
   $scope.$watchCollection('people', $scope.onPeopleChanged)
 
@@ -38,6 +46,7 @@ app.directive 'userForm', ->
   templateUrl: 'views/_user_form.html'
   controller: ($scope, $rootScope) ->
     $scope.addUser = ->
+      $scope.user.coordinates = {}
       $scope.$emit 'user:added', $scope.user
       $scope.user = {}
       $scope.userForm.$setPristine()
@@ -47,5 +56,3 @@ app.directive 'userForm', ->
 app.directive 'usersTable', ->
   restrict: 'E'
   templateUrl: 'views/_users_table.html'
-
-app.servi
