@@ -6,9 +6,7 @@ app.controller 'MapCtrl',
       latitude: 59.9189046
       longitude: 19.1343786
     $scope.currentPosition =
-      coords:
-        longitude: '?'
-        latitude: '?'
+      coords: {}
       options:
         icon: 'http://mt.google.com/vt/icon/name=icons/spotlight/star_L_8x.png&scale=2'
         labelContent: "You're here"
@@ -44,3 +42,12 @@ app.directive 'currentPosition', ->
   templateUrl: 'views/_current_position.html'
   scope:
     position: '='
+
+
+
+app.filter 'approx', ->
+  (input, precision) ->
+    precision ||= 2
+    value = parseFloat(input)
+    value.toFixed(precision) unless isNaN(value)
+

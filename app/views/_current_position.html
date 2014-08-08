@@ -3,6 +3,6 @@ your position (detected by the browser):
 </h3>
 
 <strong>longitude: </strong>
-{{ position.coords.longitude }}
+{{ position.coords.longitude | approx }}
 <strong>latitude: </strong>
-{{ position.coords.latitude }}
+{{ position.coords.latitude | approx: 3 }}
