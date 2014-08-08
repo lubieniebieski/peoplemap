@@ -33,6 +33,6 @@ app.controller 'MapCtrl',
 app.directive 'usersMap', ->
   restrict: 'E'
   scope:
-    users: '=users'
-    places: '=places'
+    users: '='
+    places: '='
   templateUrl: 'views/_users_map.html'
