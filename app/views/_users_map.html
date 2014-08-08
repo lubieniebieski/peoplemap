@@ -1,0 +1,13 @@
+<div ng-controller='MapCtrl' ng-init='getLocation()'>
+  <google-map draggable=true control='googleMap' center='centerOn' zoom='zoom'>
+    <marker coords='currentPosition.coords' icon='currentPosition.options.icon' >
+      <marker-label anchor='22 0' class='map-marker-label' content='currentPosition.options.labelContent'></marker-label>
+    </marker>
+    <marker ng-repeat='user in users' coords="user.coordinates">
+      <marker-label anchor='22 0' class='map-marker-label' content='user.name'></marker-label>
+    </marker>
+    <marker ng-repeat='place in places' coords="place.coordinates" icon='place.icon'>
+      <marker-label anchor='22 0' class='map-marker-label marker-place' content='place.name'></marker-label>
+    </marker>
+  </google-map>
+</div>

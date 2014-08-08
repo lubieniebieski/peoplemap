@@ -29,3 +29,10 @@ app.controller 'MapCtrl',
     onPositionError = (error) ->
       console.error error
   ]
+
+app.directive 'usersMap', ->
+  restrict: 'E'
+  scope:
+    users: '=users'
+    places: '=places'
+  templateUrl: 'views/_users_map.html'
