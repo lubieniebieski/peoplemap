@@ -21,7 +21,7 @@ app.controller 'MapCtrl',
       $scope.$apply ->
         $scope.currentPosition.coords = position.coords
         $scope.googleMap.getGMap().panTo(convertCoords(position.coords))
-        $scope.googleMap.getGMap().setZoom(10)
+        $scope.googleMap.getGMap().setZoom(6)
 
     convertCoords = (coords) ->
       new google.maps.LatLng(coords.latitude, coords.longitude)
