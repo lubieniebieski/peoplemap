@@ -43,11 +43,8 @@ app.directive 'currentPosition', ->
   scope:
     position: '='
 
-
-
 app.filter 'approx', ->
   (input, precision) ->
     precision ||= 2
     value = parseFloat(input)
     value.toFixed(precision) unless isNaN(value)
-
