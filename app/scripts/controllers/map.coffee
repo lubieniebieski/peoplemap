@@ -8,6 +8,7 @@ app.controller 'MapCtrl',
     $scope.currentPosition =
       coords: {}
       options:
+        icon: 'http://mt.google.com/vt/icon/name=icons/spotlight/star_L_8x.png&scale=2'
         labelContent: "You're here"
 
     $scope.googleMap = {}

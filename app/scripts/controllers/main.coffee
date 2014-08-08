@@ -21,6 +21,7 @@ app.controller 'MainCtrl', ($scope, $rootScope) ->
     name: 'netguru HQ'
     location: '27 Grudnia 3, 61-737 Poznań'
     coordinates: {}
+    icon: 'http://mt.google.com/vt/icon?color=ff004C13&name=icons/spotlight/spotlight-waypoint-blue.png'
   ,
     name: 'netguru Gdansk'
     location: 'Grunwaldzka 472, 80-236 Gdańsk'

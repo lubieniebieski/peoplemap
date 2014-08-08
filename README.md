@@ -53,3 +53,6 @@ grunt serve
 * users are fetched from Users API
 * live map reload based on Users API
 
+### Credits
+
+We use map icons provided as a list here http://reubn.tk/GoogleMapIcons/. Those are icons used by Google.
