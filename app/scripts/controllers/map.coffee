@@ -6,7 +6,9 @@ app.controller 'MapCtrl',
       latitude: 59.9189046
       longitude: 19.1343786
     $scope.currentPosition =
-      coords: {}
+      coords:
+        longitude: '?'
+        latitude: '?'
       options:
         icon: 'http://mt.google.com/vt/icon/name=icons/spotlight/star_L_8x.png&scale=2'
         labelContent: "You're here"
@@ -36,3 +38,9 @@ app.directive 'usersMap', ->
     users: '='
     places: '='
   templateUrl: 'views/_users_map.html'
+
+app.directive 'currentPosition', ->
+  restrict: 'E'
+  templateUrl: 'views/_current_position.html'
+  scope:
+    position: '='

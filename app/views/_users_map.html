@@ -1,4 +1,5 @@
 <div ng-controller='MapCtrl' ng-init='getLocation()'>
+  <current-position position='currentPosition'></current-position>
   <google-map draggable=true control='googleMap' center='centerOn' zoom='zoom'>
     <marker coords='currentPosition.coords' icon='currentPosition.options.icon' >
       <marker-label anchor='22 0' class='map-marker-label' content='currentPosition.options.labelContent'></marker-label>
